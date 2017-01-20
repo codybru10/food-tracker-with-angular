@@ -11,7 +11,8 @@ import { Meal } from './meal.model';
     <hr>
     <new-meal (addMeal)=addMeal($event)></new-meal>
     <hr>
-    <meal-list [mealList]="masterMealList"></meal-list>
+    <meal-list [mealList]="masterMealList" (sendEditMeal)="editMeal($event)"></meal-list>
+    <edit-meal [childSelectedMeal]="selectedMeal"></edit-meal>
   </div>
   `
 })
@@ -29,8 +30,14 @@ export class AppComponent {
     new Meal('Piece of Apple Pie', 'made with lard not butter', 500)
   ];
 
+  selectedMeal = null;
+
   addMeal(addedMeal: Meal){
     this.masterMealList.push(addedMeal);
+  }
+
+  editMeal(clickedMeal) {
+    this.selectedMeal = clickedMeal;
   }
 
 }

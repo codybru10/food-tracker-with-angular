@@ -8,13 +8,17 @@ import { Meal } from './meal.model';
     <h5> {{currentMeal.name}}</h5>
     <h5>{{currentMeal.details}}</h5>
     <h5>{{currentMeal.calories}}</h5>
+    <button (click)="editMeal(currentMeal)" class='btn'>Edit</button>
   </div>
   `
 })
 
 export class MealListComponent {
   @Input() mealList: Meal[];
+  @Output() sendEditMeal = new EventEmitter();
 
-
-
+  editMeal(mealToEdit: Meal) {
+    console.log(mealToEdit);
+    this.sendEditMeal.emit(mealToEdit);
+  }
 }
