@@ -12,11 +12,17 @@ import { Meal } from './meal.model';
       <input [(ngModel)]="childSelectedMeal.details">
       <label>Enter Calories</label>
       <input [(ngModel)]="childSelectedMeal.calories">
-      <button class="btn">Save Changes</button>
+      <button (click)="editDone()" class="btn">Save Changes</button>
     </div>
   `
 })
 
 export class EditMealComponent {
   @Input() childSelectedMeal: Meal;
+  @Output() done = new EventEmitter();
+
+  editDone() {
+    this.done.emit();
+  }
+
 }
