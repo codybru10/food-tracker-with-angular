@@ -1,14 +1,29 @@
 import { Component } from '@angular/core';
+import { Meal } from './meal.model';
+
 
 @Component({
   selector: 'app-root',
   template: `
   <div class="container">
-    <h1>My first angular 2 app</h1>
+    <h1>Angular Meal Tracker</h1>
+    <h3>Date: {{month}}/{{date}}/{{year}}</h3>
+    <meal-list [mealList]="masterMealList"></meal-list>
   </div>
   `
 })
 
 export class AppComponent {
+  currentDate = new Date();
+  month = this.currentDate.getMonth() + 1;
+  date = this.currentDate.getDate();
+  year = this.currentDate.getFullYear();
+
+
+  masterMealList: Meal[] = [
+    new Meal('Chicken', 'baked chicken, extra extra greasy', 800),
+    new Meal('Pasta', 'extra butter and cheese', 750),
+    new Meal('Piece of Apple Pie', 'made with lard not butter', 500)
+  ];
 
 }
