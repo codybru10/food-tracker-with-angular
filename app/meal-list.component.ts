@@ -14,10 +14,10 @@ import { Meal } from './meal.model';
   <div *ngFor="let currentMeal of mealList | calorieIntake:filterByCalories" class="well" class="row">
       <div class="col s12 m12">
         <div class="card-panel hoverable indigo lighten-5">
-          <h5> {{currentMeal.name}}</h5>
-          <h5>{{currentMeal.details}}</h5>
-          <h5>{{currentMeal.calories}}</h5>
-          <button (click)="editMeal(currentMeal)" class='btn'>Edit</button>
+          <h5>Meal: {{currentMeal.name}}</h5>
+          <h5>Details: {{currentMeal.details}}</h5>
+          <h5>Calories: {{currentMeal.calories}}</h5>
+          <button (click)="editMeal(currentMeal)" class='btn light-blue darken-2'>Edit</button>
         </div>
       </div>
     </div>

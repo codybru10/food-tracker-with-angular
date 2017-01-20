@@ -6,13 +6,15 @@ import { Meal } from './meal.model';
   template: `
   <h3>Add Meal</h3>
   <div>
-    <label>Enter Meal</label>
     <input #newName>
-    <label>Enter Details</label>
+    <label>Enter Meal</label>
     <input #newDetails>
-    <label>Enter Calories</label>
+    <label>Enter Details</label>
     <input #newCalories>
-    <button (click)="submitMeal(newName.value, newDetails.value, newCalories.value); newName.value=''; newDetails.value=''; newCalories.value='';" class="btn">Add Meal</button>
+    <label>Enter Calories</label>
+    <br>
+    <br>
+    <button (click)="submitMeal(newName.value, newDetails.value, newCalories.value); newName.value=''; newDetails.value=''; newCalories.value='';" class="btn light-blue darken-2">Add Meal</button>
   </div>
   `
 })

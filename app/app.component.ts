@@ -5,8 +5,12 @@ import { Meal } from './meal.model';
 @Component({
   selector: 'app-root',
   template: `
+  <nav>
+    <div class="nav-wrapper">
+      <a href="localhost:3000" class="brand-logo">Meal Tracker</a>
+    </div>
+  </nav>
   <div class="container">
-    <h1>Angular Meal Tracker</h1>
     <h3>Date: {{month}}/{{date}}/{{year}}</h3>
     <br>
     <new-meal (addMeal)=addMeal($event)></new-meal>
@@ -43,5 +47,6 @@ export class AppComponent {
   editDone() {
     this.selectedMeal = null;
   }
+
 
 }
