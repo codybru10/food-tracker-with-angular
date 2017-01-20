@@ -30,7 +30,6 @@ export class MealListComponent {
   filterByCalories: string = "allFood";
 
   onChange(optionFromMenu) {
-    console.log(optionFromMenu);
     this.filterByCalories = optionFromMenu;
   }
 }

@@ -10,7 +10,6 @@ export class CaloriesPipe implements PipeTransform {
   transform(input: Meal[], calorieType) {
     var output: Meal[] = [];
     if(calorieType === "highCalorie") {
-      console.log('high cal');
       for (var i = 0; i < input.length; i++) {
         if (input[i].calories >= 500) {
           output.push(input[i]);
