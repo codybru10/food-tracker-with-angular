@@ -10,12 +10,18 @@ import { Meal } from './meal.model';
     <option value="lowCalorie">Low Calorie Food</option>
   </select>
   <br>
-  <div *ngFor="let currentMeal of mealList | calorieIntake:filterByCalories" class="well">
-    <h5> {{currentMeal.name}}</h5>
-    <h5>{{currentMeal.details}}</h5>
-    <h5>{{currentMeal.calories}}</h5>
-    <button (click)="editMeal(currentMeal)" class='btn'>Edit</button>
-  </div>
+
+  <div *ngFor="let currentMeal of mealList | calorieIntake:filterByCalories" class="well" class="row">
+      <div class="col s12 m12">
+        <div class="card-panel hoverable indigo lighten-5">
+          <h5> {{currentMeal.name}}</h5>
+          <h5>{{currentMeal.details}}</h5>
+          <h5>{{currentMeal.calories}}</h5>
+          <button (click)="editMeal(currentMeal)" class='btn'>Edit</button>
+        </div>
+      </div>
+    </div>
+
   `
 })
 

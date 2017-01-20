@@ -8,9 +8,9 @@ import { Meal } from './meal.model';
   <div class="container">
     <h1>Angular Meal Tracker</h1>
     <h3>Date: {{month}}/{{date}}/{{year}}</h3>
-    <hr>
+    <br>
     <new-meal (addMeal)=addMeal($event)></new-meal>
-    <hr>
+    <br>
     <meal-list [mealList]="masterMealList" (sendEditMeal)="editMeal($event)"></meal-list>
     <edit-meal [childSelectedMeal]="selectedMeal" (done)="editDone()"></edit-meal>
   </div>
