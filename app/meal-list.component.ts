@@ -18,7 +18,6 @@ export class MealListComponent {
   @Output() sendEditMeal = new EventEmitter();
 
   editMeal(mealToEdit: Meal) {
-    console.log(mealToEdit);
     this.sendEditMeal.emit(mealToEdit);
   }
 }
