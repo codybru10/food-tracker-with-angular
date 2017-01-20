@@ -10,7 +10,7 @@ import { Meal } from './meal.model';
     <option value="lowCalorie">Low Calorie Food</option>
   </select>
   <br>
-  <div *ngFor="let currentMeal of mealList | calories:filterByCalories" class="well">
+  <div *ngFor="let currentMeal of mealList | calorieIntake:filterByCalories" class="well">
     <h5> {{currentMeal.name}}</h5>
     <h5>{{currentMeal.details}}</h5>
     <h5>{{currentMeal.calories}}</h5>
@@ -29,7 +29,8 @@ export class MealListComponent {
 
   filterByCalories: string = "allFood";
 
-  onChange(optionSelected) {
-    this.filterByCalories = "optionSelected";
+  onChange(optionFromMenu) {
+    console.log(optionFromMenu);
+    this.filterByCalories = optionFromMenu;
   }
 }
