@@ -8,6 +8,9 @@ import { Meal } from './meal.model';
   <div class="container">
     <h1>Angular Meal Tracker</h1>
     <h3>Date: {{month}}/{{date}}/{{year}}</h3>
+    <hr>
+    <new-meal (addMeal)=addMeal($event)></new-meal>
+    <hr>
     <meal-list [mealList]="masterMealList"></meal-list>
   </div>
   `
@@ -25,5 +28,9 @@ export class AppComponent {
     new Meal('Pasta', 'extra butter and cheese', 750),
     new Meal('Piece of Apple Pie', 'made with lard not butter', 500)
   ];
+
+  addMeal(addedMeal: Meal){
+    this.masterMealList.push(addedMeal);
+  }
 
 }
